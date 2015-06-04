@@ -6,7 +6,8 @@ RUN /bin/sed -i 's/archive\.ubuntu/mirrors.aliyun/' /etc/apt/sources.list
 
 # install essentials
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends curl procps \
+	&& apt-get install -y --no-install-recommends curl ca-certificates \
+		procps \
 	&& rm -rf /var/lib/apt/lists/*
 
 # install latest rvm
