@@ -18,6 +18,5 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 \
 	&& curl -sSL https://get.rvm.io | bash -s stable
 
 # install ruby and bundler
-RUN source /etc/profile.d/rvm.sh; \
-	rvm install ruby 2.2.0 \
-	&& gem install bundler --no-ri --no-rdoc
+ADD build.sh
+RUN ./build.sh
