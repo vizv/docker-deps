@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 MAINTAINER Viz <viz@linux.com>
 
+# use bash instead of dash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # switch to aliyun's mirror for speed up
 RUN /bin/sed -i 's/archive\.ubuntu/mirrors.aliyun/' /etc/apt/sources.list
 
